@@ -74,7 +74,7 @@ on:
 
 jobs:
   ci:
-    uses: chamaya00/agent-factory/.github/workflows/ci.yml@v1.35.0
+    uses: chamaya00/agent-factory/.github/workflows/ci.yml@v1.36.0
     with:
       check-name: 'checks'
       commands: |
