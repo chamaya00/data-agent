@@ -35,7 +35,8 @@ class VoteEvent:
             raise ValueError(f"VoteEvent.type must be {VOTE!r}, got {self.type!r}")
         if self.direction not in VALID_DIRECTIONS:
             raise ValueError(
-                f"VoteEvent.direction must be one of {sorted(VALID_DIRECTIONS)}, got {self.direction!r}"
+                f"VoteEvent.direction must be one of {sorted(VALID_DIRECTIONS)}, "
+                f"got {self.direction!r}"
             )
         if self.variant not in VALID_VARIANTS:
             raise ValueError(
@@ -55,7 +56,8 @@ class VariantSeenEvent:
             raise ValueError(f"VariantSeenEvent.type must be {VARIANT_SEEN!r}, got {self.type!r}")
         if self.variant not in VALID_VARIANTS:
             raise ValueError(
-                f"VariantSeenEvent.variant must be one of {sorted(VALID_VARIANTS)}, got {self.variant!r}"
+                f"VariantSeenEvent.variant must be one of {sorted(VALID_VARIANTS)}, "
+                f"got {self.variant!r}"
             )
 
 
