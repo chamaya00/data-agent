@@ -10,9 +10,10 @@ to drift.
 
 ## Stack
 
-Not chosen yet. Choosing it is the first decision this repository has to record,
-as an ADR under `docs/decisions/`, because the language and package manager are
-a category-changing choice and every command below is downstream of them.
+Python, managed with [uv](https://docs.astral.sh/uv/). Recorded as this
+repository's first decision in `docs/decisions/0001-stack.md`, because the
+language and package manager are a category-changing choice and every command
+below is downstream of them.
 
 Nothing publishes this repository yet either, and that is an open question
 rather than a settled answer: when a release target is chosen - a package
@@ -24,12 +25,10 @@ day.
 
 ## Commands
 
-- Install: none yet - there is nothing to install until the stack is chosen.
-- Dev: none yet, for the same reason.
-- Checks CI runs: none of this project's own yet. The gate runs the scaffolding
-  checks written out in `.github/workflows/ci.yml` and nothing else. The first
-  real check is named here and in that file in the same commit as the first
-  product code.
+- Install: `uv sync` - installs dependencies into `.venv`.
+- Dev: `uv run python` - opens a REPL with this package importable; there is
+  no server or long-running process yet.
+- Checks CI runs: `uv run ruff check .` and `uv run pytest`.
 
 The checks above are what CI runs once the gate is real. Until then it is
 not: `.github/workflows/ci.yml` ships a placeholder that checks the scaffolding
