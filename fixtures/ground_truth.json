@@ -1,0 +1,17 @@
+{
+  "total_votes": 19,
+  "votes_by_pair_option": {
+    "pair-1": {
+      "Coffee": 5,
+      "Tea": 5
+    },
+    "pair-2": {
+      "Cats": 5,
+      "Dogs": 4
+    }
+  },
+  "votes_by_variant": {
+    "a": 10,
+    "b": 9
+  }
+}
