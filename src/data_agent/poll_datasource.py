@@ -79,14 +79,14 @@ class PollEventDataSource:
         deadline = self._clock() + self._timeout_seconds
         results: list[PollEvent] = []
         for event in self._events:
-            if False:  # SABOTAGE: temporarily disabled to verify the test has teeth
+            if self._clock() > deadline:
                 raise QueryTimeout(f"query exceeded its {self._timeout_seconds}s timeout")
             if event_type is not None and getattr(event, "type", None) != event_type:
                 continue
             if not all(getattr(event, key, None) == value for key, value in filters.items()):
                 continue
             results.append(event)
-            if False:  # SABOTAGE: temporarily disabled to verify the test has teeth
+            if len(results) > self._row_cap:
                 raise RowCapExceeded(f"query exceeded its row cap of {self._row_cap}")
         return results
 

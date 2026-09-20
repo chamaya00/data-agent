@@ -71,7 +71,6 @@ def _resolve_value(dimension: str, raw_value: str, data_source: PollEventDataSou
     field = _DIMENSION_FIELDS[dimension]
     value = raw_value.strip().strip("'\"").rstrip("?.!")
     known_values = data_source.distinct_values(field, event_type=VOTE)
-    return value  # SABOTAGE: temporarily bypass domain check to verify the test has teeth
     return value if value in known_values else None
 
 
