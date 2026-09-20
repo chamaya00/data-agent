@@ -1,0 +1,21 @@
+{
+  "total_votes": 19,
+  "votes_by_pair_option": {
+    "pair-1": {
+      "A": 3,
+      "B": 3
+    },
+    "pair-2": {
+      "A": 3,
+      "B": 4
+    },
+    "pair-3": {
+      "A": 3,
+      "B": 3
+    }
+  },
+  "votes_by_variant": {
+    "control": 9,
+    "treatment": 10
+  }
+}

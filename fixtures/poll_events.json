@@ -1,0 +1,203 @@
+[
+  {
+    "id": "evt-0000",
+    "type": "variant_seen",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "evt-0001",
+    "type": "vote",
+    "pairId": "pair-2",
+    "option": "B",
+    "direction": "up",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "evt-0002",
+    "type": "vote",
+    "pairId": "pair-3",
+    "option": "A",
+    "direction": "down",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "evt-0003",
+    "type": "vote",
+    "pairId": "pair-1",
+    "option": "B",
+    "direction": "up",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "evt-0004",
+    "type": "vote",
+    "pairId": "pair-2",
+    "option": "A",
+    "direction": "down",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "evt-0005",
+    "type": "variant_seen",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:05Z"
+  },
+  {
+    "id": "evt-0006",
+    "type": "vote",
+    "pairId": "pair-1",
+    "option": "A",
+    "direction": "down",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:06Z"
+  },
+  {
+    "id": "evt-0007",
+    "type": "vote",
+    "pairId": "pair-2",
+    "option": "B",
+    "direction": "up",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:07Z"
+  },
+  {
+    "id": "evt-0008",
+    "type": "vote",
+    "pairId": "pair-3",
+    "option": "A",
+    "direction": "down",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:08Z"
+  },
+  {
+    "id": "evt-0009",
+    "type": "vote",
+    "pairId": "pair-1",
+    "option": "B",
+    "direction": "up",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:09Z"
+  },
+  {
+    "id": "evt-0010",
+    "type": "variant_seen",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:10Z"
+  },
+  {
+    "id": "evt-0011",
+    "type": "vote",
+    "pairId": "pair-3",
+    "option": "B",
+    "direction": "up",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:11Z"
+  },
+  {
+    "id": "evt-0012",
+    "type": "vote",
+    "pairId": "pair-1",
+    "option": "A",
+    "direction": "down",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:12Z"
+  },
+  {
+    "id": "evt-0013",
+    "type": "vote",
+    "pairId": "pair-2",
+    "option": "B",
+    "direction": "up",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:13Z"
+  },
+  {
+    "id": "evt-0014",
+    "type": "vote",
+    "pairId": "pair-3",
+    "option": "A",
+    "direction": "down",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:14Z"
+  },
+  {
+    "id": "evt-0015",
+    "type": "variant_seen",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:15Z"
+  },
+  {
+    "id": "evt-0016",
+    "type": "vote",
+    "pairId": "pair-2",
+    "option": "A",
+    "direction": "down",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:16Z"
+  },
+  {
+    "id": "evt-0017",
+    "type": "vote",
+    "pairId": "pair-3",
+    "option": "B",
+    "direction": "up",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:17Z"
+  },
+  {
+    "id": "evt-0018",
+    "type": "vote",
+    "pairId": "pair-1",
+    "option": "A",
+    "direction": "down",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:18Z"
+  },
+  {
+    "id": "evt-0019",
+    "type": "vote",
+    "pairId": "pair-2",
+    "option": "B",
+    "direction": "up",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:19Z"
+  },
+  {
+    "id": "evt-0020",
+    "type": "variant_seen",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:20Z"
+  },
+  {
+    "id": "evt-0021",
+    "type": "vote",
+    "pairId": "pair-1",
+    "option": "B",
+    "direction": "up",
+    "variant": "control",
+    "timestamp": "2026-01-01T00:00:21Z"
+  },
+  {
+    "id": "evt-0022",
+    "type": "vote",
+    "pairId": "pair-2",
+    "option": "A",
+    "direction": "down",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:22Z"
+  },
+  {
+    "id": "evt-0023",
+    "type": "vote",
+    "pairId": "pair-3",
+    "option": "B",
+    "direction": "up",
+    "variant": "treatment",
+    "timestamp": "2026-01-01T00:00:23Z"
+  }
+]
