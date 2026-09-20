@@ -6,6 +6,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
+[project.scripts]
+data-agent = "data_agent.cli:main"
+
 [tool.uv]
 dev-dependencies = [
     "pytest>=8.0",
