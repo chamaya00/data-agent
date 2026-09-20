@@ -2,20 +2,16 @@
   "total_votes": 19,
   "votes_by_pair_option": {
     "pair-1": {
-      "A": 3,
-      "B": 3
+      "Coffee": 5,
+      "Tea": 5
     },
     "pair-2": {
-      "A": 3,
-      "B": 4
-    },
-    "pair-3": {
-      "A": 3,
-      "B": 3
+      "Cats": 5,
+      "Dogs": 4
     }
   },
   "votes_by_variant": {
-    "control": 9,
-    "treatment": 10
+    "a": 10,
+    "b": 9
   }
 }

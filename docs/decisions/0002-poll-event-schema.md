@@ -30,12 +30,41 @@ and a union type: `VoteEvent` (`id`, `type="vote"`, `pairId`, `option`,
 in `__post_init__`, so a record cannot silently carry the wrong tag.
 `PollEvent` is `Union[VoteEvent, VariantSeenEvent]`.
 
+**Value domains, not just field names.** The first version of this ADR typed
+the fields and stopped there; a pull request review on #6 (2026-09-20) caught
+that the committed fixture used values the real product cannot emit —
+`direction` of `"up"`/`"down"` instead of a swipe's `"left"`/`"right"`,
+`variant` of `"control"`/`"treatment"` instead of the arm names `"a"`/`"b"`,
+and `option` of bare `"A"`/`"B"` instead of the pair's actual labels. Those
+values were type-valid and passed every criterion in #6, which is why the
+review calls this "wrong in a way that looks right" rather than a crash.
+`VoteEvent.__post_init__` and `VariantSeenEvent.__post_init__` now reject a
+`direction` or `variant` outside `VALID_DIRECTIONS = {"left", "right"}` /
+`VALID_VARIANTS = {"a", "b"}`, the same way they already reject a wrong
+`type`.
+
+`option` is drawn from each pair's own two labels rather than a shared `"A"`/
+`"B"` placeholder: `pair-1` is `"Coffee"`/`"Tea"`, `pair-2` is `"Cats"`/
+`"Dogs"` — verified directly against `src/lib/poll.ts` in
+`chamaya00/analytics-practice` by the reviewer, not re-derived here (this
+repository's build still does not depend on that one). The fixture now
+commits to only those two pairs rather than the earlier three: this sandbox
+cannot reach that reference repository to read a third pair's real labels
+(recorded in `docs/memory/engineer.md`), and inventing one would repeat the
+exact defect this revision fixes — a value that is type-valid but not
+something the product emits. Two pairs already satisfies #6's "multiple
+pairs" criterion; a later run with access to the reference repo can extend to
+`pair-3` in its own commit, regenerating both fixture and ground truth
+together as this file already requires.
+
 `src/data_agent/fixtures.py` generates the fixture by cycling deterministic
-indices over `i` (pairId on `i % 3`, option on `i % 2`, variant on `i % 4`
-grouped in twos, a `variant_seen` event on every fifth `i`) rather than a
-seeded PRNG. The output is fully specified by arithmetic on `i`, so it can be
-recomputed and checked by hand without executing anything — which is exactly
-what produced the 24-event fixture committed at `fixtures/poll_events.json`.
+indices rather than a seeded PRNG: a `variant_seen` event on every fifth `i`,
+and for each vote a `pair`/`direction` pair keyed off the count of vote
+events seen so far (not `i` directly), so a swipe direction doesn't lock to
+one pair and both options of both pairs appear in the fixture. The output is
+fully specified by arithmetic on an index, so it can be recomputed and
+checked by hand without executing anything — which is exactly what produced
+the 24-event fixture committed at `fixtures/poll_events.json`.
 
 `src/data_agent/ground_truth.py` filters to `VoteEvent` before counting
 anything, then reports `total_votes`, `votes_by_pair_option` (nested by pair
